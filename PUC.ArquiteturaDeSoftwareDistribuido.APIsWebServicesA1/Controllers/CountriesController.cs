@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PUC.ArquiteturaDeSoftwareDistribuido.APIsWebServicesA1.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,17 +12,21 @@ namespace PUC.ArquiteturaDeSoftwareDistribuido.APIsWebServicesA1.Controllers
     [ApiController]
     public class CountriesController : ControllerBase
     {
+        public CountriesService service { get; set; }
+
         public CountriesController()
         {
 
         }
 
         [HttpGet]
-        public ActionResult Get ()
+        public async Task<ActionResult> Get ()
         {
             try
             {
-                return new OkResult();
+                var countries = await this.service.ListOfCurrenciesByName();
+
+                return new OkObjectResult(countries);
             }
             catch (Exception ex)
             {

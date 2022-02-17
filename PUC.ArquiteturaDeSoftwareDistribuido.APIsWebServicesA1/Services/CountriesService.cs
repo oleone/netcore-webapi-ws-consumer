@@ -7,7 +7,7 @@ namespace PUC.ArquiteturaDeSoftwareDistribuido.APIsWebServicesA1.Services
 {
     public class CountriesService
     {
-        public dynamic GetByName()
+        public dynamic ListOfCurrenciesByName()
         {
             return new object { };
         }
