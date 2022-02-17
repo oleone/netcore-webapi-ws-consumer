@@ -27,7 +27,10 @@ namespace PUC.ArquiteturaDeSoftwareDistribuido.APIsWebServicesA1
         {
             services.AddControllers();
 
+            // TODO: CRIAR INTERFACES PARA OS SERVIÇOS.
             services.AddScoped<CountriesService>(x => new CountriesService(Configuration));
+            services.AddScoped<NumbersService>(x => new NumbersService(Configuration));
+            services.AddScoped<ISBNService>(x => new ISBNService(Configuration));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

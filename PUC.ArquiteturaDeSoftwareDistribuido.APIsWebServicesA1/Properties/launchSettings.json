@@ -11,16 +11,16 @@
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "api/weatherforecast",
+      "launchBrowser": false,
+      "launchUrl": "api/countries",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "PUC.ArquiteturaDeSoftwareDistribuido.APIsWebServicesA1": {
       "commandName": "Project",
-      "launchBrowser": true,
-      "launchUrl": "api/weatherforecast",
+      "launchBrowser": false,
+      "launchUrl": "api/countries",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
@@ -28,8 +28,8 @@
     },
     "Docker": {
       "commandName": "Docker",
-      "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api/weatherforecast",
+      "launchBrowser": false,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api/countries",
       "publishAllPorts": true
     }
   }

@@ -10,27 +10,26 @@ namespace PUC.ArquiteturaDeSoftwareDistribuido.APIsWebServicesA1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CountriesController : ControllerBase
+    public class ISBNController : ControllerBase
     {
-        public CountriesService Service { get; set; }
-
-        public CountriesController(CountriesService service)
+        public ISBNService Service { get; set; }
+        public ISBNController(ISBNService service)
         {
             Service = service;
         }
 
         /// <summary>
-        /// Buscar informações completas de todos os paises.
+        /// Validação de número ISBN 13.
         /// </summary>
-        /// <returns>Lista de paises.</returns>
-        [HttpGet("fullCountryInfoAllCountries")]
-        public async Task<ActionResult> FullCountryInfoAllCountries()
+        /// <param name="sISBN">Número ISBN 13.</param>
+        /// <returns>Booleano.</returns>
+        [HttpGet("validationISBN13")]
+        public async Task<ActionResult> IsValidISBN13([FromQuery] string sISBN)
         {
             try
             {
-                var countries = await Service.FullCountryInfoAllCountriesAsync();
-
-                return new OkObjectResult(countries);
+                bool isValid = await Service.IsValidISBN13(sISBN);
+                return new OkObjectResult(isValid);
             }
             catch (Exception ex)
             {
