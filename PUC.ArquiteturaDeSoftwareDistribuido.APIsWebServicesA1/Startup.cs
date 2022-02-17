@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using PUC.ArquiteturaDeSoftwareDistribuido.APIsWebServicesA1.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,8 @@ namespace PUC.ArquiteturaDeSoftwareDistribuido.APIsWebServicesA1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddScoped<CountriesService>(x => new CountriesService(Configuration));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

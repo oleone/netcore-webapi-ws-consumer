@@ -12,19 +12,19 @@ namespace PUC.ArquiteturaDeSoftwareDistribuido.APIsWebServicesA1.Controllers
     [ApiController]
     public class CountriesController : ControllerBase
     {
-        public CountriesService service { get; set; }
+        public CountriesService Service { get; set; }
 
-        public CountriesController()
+        public CountriesController(CountriesService service)
         {
-
+            Service = service;
         }
 
         [HttpGet]
-        public async Task<ActionResult> Get ()
+        public async Task<ActionResult> Get()
         {
             try
             {
-                var countries = await this.service.ListOfCurrenciesByName();
+                var countries = await Service.FullCountryInfoAllCountriesAsync();
 
                 return new OkObjectResult(countries);
             }
