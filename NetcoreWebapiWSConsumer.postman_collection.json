@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "0e57753c-a706-4741-8ed2-6e8733023780",
+		"name": "PUC ArqDeSoft A1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Countries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:15775/api/countries/fullCountryInfoAllCountries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "15775",
+					"path": [
+						"api",
+						"countries",
+						"fullCountryInfoAllCountries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Convert Number to Words",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:15775/api/numbers/numberToWords?number=25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "15775",
+					"path": [
+						"api",
+						"numbers",
+						"numberToWords"
+					],
+					"query": [
+						{
+							"key": "number",
+							"value": "25"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validation to ISBN 13",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:15775/api/isbn/validationISBN13?sISBN=978-1-4612-9090-2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "15775",
+					"path": [
+						"api",
+						"isbn",
+						"validationISBN13"
+					],
+					"query": [
+						{
+							"key": "sISBN",
+							"value": "978-1-4612-9090-2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
