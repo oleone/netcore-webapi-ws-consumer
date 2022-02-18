@@ -24,9 +24,36 @@ namespace NetcoreWebapiWSConsumer.Controllers
         /// <param name="number">Número.</param>
         /// <returns>Número por extenso.</returns>
         [HttpGet("numberToWords")]
-        public async Task<string> NumberToWords([FromQuery] ulong number)
+        public async Task<ActionResult<string>> NumberToWords([FromQuery] ulong number)
         {
-            return await Service.NumberToWords(number);
+            try
+            {
+                var numberWorded = await Service.NumberToWords(number);
+                return new OkObjectResult(numberWorded);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500);
+            }
+        }
+
+        /// <summary>
+        /// Conversão simples de número para dolar.
+        /// </summary>
+        /// <param name="dNumber">Número decimal.</param>
+        /// <returns>Número dolarizado.</returns>
+        [HttpGet("numberToDollars")]
+        public async Task<ActionResult<string>> NumberToDollars([FromQuery] decimal dNumber)
+        {
+            try
+            {
+                var dollar = await Service.NumberToDollars(dNumber);
+                return new OkObjectResult(dollar);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500);
+            }
         }
     }
 }

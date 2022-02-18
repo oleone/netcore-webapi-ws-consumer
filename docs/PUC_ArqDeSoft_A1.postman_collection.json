@@ -11,43 +11,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:15775/api/countries/fullCountryInfoAllCountries",
+					"raw": "http://localhost:55000/api/countries/fullCountryInfoAllCountries",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "15775",
+					"port": "55000",
 					"path": [
 						"api",
 						"countries",
 						"fullCountryInfoAllCountries"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Convert Number to Words",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:15775/api/numbers/numberToWords?number=25",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "15775",
-					"path": [
-						"api",
-						"numbers",
-						"numberToWords"
-					],
-					"query": [
-						{
-							"key": "number",
-							"value": "25"
-						}
 					]
 				}
 			},
@@ -59,12 +32,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:15775/api/isbn/validationISBN13?sISBN=978-1-4612-9090-2",
+					"raw": "http://localhost:55000/api/isbn/validationISBN13?sISBN=978-1-4612-9090-2",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "15775",
+					"port": "55000",
 					"path": [
 						"api",
 						"isbn",
@@ -74,6 +47,60 @@
 						{
 							"key": "sISBN",
 							"value": "978-1-4612-9090-2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Convert Number to Words",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:55000/api/numbers/numberToWords?number=5895400",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "55000",
+					"path": [
+						"api",
+						"numbers",
+						"numberToWords"
+					],
+					"query": [
+						{
+							"key": "number",
+							"value": "5895400"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Convert Number to Dollar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:55000/api/numbers/numberToDollars?dNumber=250",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "55000",
+					"path": [
+						"api",
+						"numbers",
+						"numberToDollars"
+					],
+					"query": [
+						{
+							"key": "dNumber",
+							"value": "250"
 						}
 					]
 				}

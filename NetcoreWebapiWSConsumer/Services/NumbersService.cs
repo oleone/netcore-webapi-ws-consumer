@@ -22,5 +22,12 @@ namespace NetcoreWebapiWSConsumer.Services
             var result = await client.NumberToWordsAsync(number);
             return result.Body.NumberToWordsResult.ToUpperInvariant().Trim();
         }
+
+        public async Task<string> NumberToDollars(decimal dNum)
+        {
+            NumberConversionSoapTypeClient client = new NumberConversionSoapTypeClient(NumberConversionSoapTypeClient.EndpointConfiguration.NumberConversionSoap);
+            var result = await client.NumberToDollarsAsync(dNum);
+            return result.Body.NumberToDollarsResult;
+        }
     }
 }
